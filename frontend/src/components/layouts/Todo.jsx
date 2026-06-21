@@ -13,7 +13,7 @@ const Todo = () => {
             'priority': priority
         })
 
-        console.log(data)
+        console.log(data.data.message)
     }
 
     let handleTaskChange = (e)=>{
