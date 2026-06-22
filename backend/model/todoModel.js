@@ -13,7 +13,7 @@ const todoSchema = new Schema({
     },
     priority:{
         type : String,
-        erum : ['high','low','medium'],
+        enum : ['high','low','medium'],
         required : true
     }
 })
