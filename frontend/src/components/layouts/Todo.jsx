@@ -72,7 +72,6 @@ const Todo = () => {
                     className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 transition-all duration-200 cursor-pointer whitespace-nowrap">
                     Add Task
                 </button>
-                
             </div>
         </div>
         </>
