@@ -22,5 +22,9 @@ const createTodo =async (req,res) => {
     })
 }
 
+const allTodos = async (req,res) => {
+    
+}
+
 
 module.exports = {createTodo}
