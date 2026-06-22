@@ -32,7 +32,7 @@ const Todo = () => {
             </h1>
             <div className="flex flex-col sm:flex-row gap-3">
                 {/* Input Field */}
-                <input type="text" onChange={handleTaskChange} placeholder="Add your tash here" className="flex-1 px-4 py-3 bg-gray-50 border border-gray-200 text-gray-700 rounded-xl placeholder-gray-400 outline-none"/>
+                <input type="text" onChange={handleTaskChange} placeholder="Add your task here" className="flex-1 px-4 py-3 bg-gray-50 border border-gray-200 text-gray-700 rounded-xl placeholder-gray-400 outline-none"/>
                 {/* Select */}
                 <div className="relative w-full sm:w-auto">
                     <select onChange={handleSelect} className="appearance-none px-4 py-3 bg-gray-50 border border-gray-200 text-gray-700 rounded-xl outline-none cursor-pointer font-medium capitalize">
