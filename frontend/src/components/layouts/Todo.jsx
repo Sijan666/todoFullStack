@@ -40,15 +40,13 @@ const Todo = () => {
                     {info.message}
                 </p>
             )}
-            
             <div className="flex flex-col sm:flex-row gap-4">
                 {/* Input Field */}
                 <input 
                     type="text" 
                     onChange={handleTaskChange} 
                     placeholder="Add your task here..." 
-                    className="flex-1 px-5 py-4 bg-slate-50 border border-slate-200 text-slate-700 rounded-xl placeholder-slate-400 outline-none focus:bg-white focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-all duration-200"
-                />
+                    className="flex-1 px-5 py-4 bg-slate-50 border border-slate-200 text-slate-700 rounded-xl placeholder-slate-400 outline-none focus:bg-white focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-all duration-200"/>
                 {/* Select */}
                 <div className="relative w-full sm:w-auto">
                     <select 
