@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useEffect } from "react";
 import axios from 'axios';
 
 const Todo = () => {
@@ -6,6 +6,7 @@ const Todo = () => {
     let [task, setTask] = useState('');
     let [priority, setPriority] = useState('');
     let [info, setinfo] = useState({});
+    let [data, setData] = useState([])
 
     let handleClick = async () => {
         let data = await axios.post('http://localhost:5000/create/todo', {
@@ -23,6 +24,14 @@ const Todo = () => {
     let handleSelect = (e) => {
         setPriority(e.target.value);
     }
+
+    useEffect(()=>{
+        async function todos(){
+            let todosData = await axios.get('http://localhost:5000/allTodos')
+            setData(todosData.data.data);
+        }
+        todos()
+    },[])
 
     return (
         <>
@@ -70,6 +79,12 @@ const Todo = () => {
                     className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 transition-all duration-200 cursor-pointer whitespace-nowrap">
                     Add Task
                 </button>
+
+                <ul>
+                    {/* {data.map(item=>(
+                        <li>{item.task} ===== {item.priority} ===== {item.status}</li>
+                    ))} */}
+                </ul>
             </div>
         </div>
         </>
