@@ -81,6 +81,7 @@ const Todo = () => {
                 </button>
                 {/* task list */}
                 <ul>
+                    {/* sir er dekhano way */}
                     {/* {data.map(item=>(
                         <li>{item.task} ===== {item.priority} ===== {item.status}</li>
                     ))} */}
