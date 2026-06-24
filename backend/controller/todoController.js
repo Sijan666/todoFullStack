@@ -33,7 +33,7 @@ const allTodos = async (req,res) => {
 
 const deleteData = async (req,res) => {
     const {id} = req.params
-    await Todo.findByIdAndDelete(id)
+    let deleteTodo = await Todo.findByIdAndDelete(id)
     res.send({
         success : true,
         message : "Todo deleted",
@@ -42,10 +42,10 @@ const deleteData = async (req,res) => {
 
 const updateData = async (req,res) => {
     const {id} = req.params
-    let id = await Todo.findByIdAndUpdate({_id:id})
+    let updateTodo = await Todo.findByIdAndUpdate({_id:id},req.body)
     res.send({
         success : true,
-        message : "Todo Updated"
+        message : "Todo Updated",
     })
 }
 
