@@ -35,6 +35,13 @@ const Todo = () => {
         todos()
     },[])
 
+    let handleDelete = async (id) => {
+        let data = await axios.delete(`http://localhost:5000/delete/${id}`)
+        console.log(data);
+        let todosData = await axios.get('http://localhost:5000/allTodos')
+        setData(todosData.data.data);
+    }
+
     return (
         <>
         <div className="max-w-3xl mx-auto mt-16 bg-white p-8 rounded-3xl shadow-xl shadow-indigo-100/50 border border-indigo-50">
@@ -83,16 +90,33 @@ const Todo = () => {
                 </button>
                 {/* task list */}
             </div>
-            <ul>
-                {/* sir er dekhano way */}
-                {/* {data.map(item=>(
+            {/* <ul className="mt-5">
+                sir er dekhano way
+                {data.map(item=>(
                     <li>{item.task} ===== {item.priority} ===== {item.status}</li>
-                ))} */}
+                ))}
                 {data.map((item)=>(
-                    <div key={item.id} className="">
-                        <li>{item.task} ===== {item.priority} ===== {item.status}</li>
+                    <div key={item.id} className="grid grid-cols-4 gap-10">
+                        <li>{item.task}</li>
+                        <li>{item.priority}</li>
+                        <li>{item.status}</li>
+                        <button onClick={()=>handleDelete(item._id)} className="p-1 bg-gray-400 text-white rounded-md ">Delete</button>
                     </div>
                 ))}
+            </ul> */}
+            <ul className="flex flex-col gap-5 mt-5">
+            {data.map((item) => (
+                <li key={item._id} className="grid grid-cols-4 items-center gap-10 p-3 bg-white border rounded-lg shadow-sm">
+                    <span className="font-medium text-gray-800">{item.task}</span>
+                    <span className="text-gray-600">{item.priority}</span>
+                    <span className="text-gray-600">{item.status}</span>
+                    <div className="flex justify-end">
+                        <button onClick={() => handleDelete(item._id)} className="px-3 py-1 bg-gray-500 text-white rounded-md cursor-pointer">
+                            Delete
+                        </button>
+                    </div>
+                </li>
+            ))}
             </ul>
         </div>
         </>
