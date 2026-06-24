@@ -17,7 +17,7 @@ const createTodo = async (req,res) => {
         priority : priority
     })
 
-    todo.save()
+    await todo.save()
     res.send({
         success:true,
         message:"Todo created"
