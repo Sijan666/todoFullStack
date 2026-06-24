@@ -95,14 +95,6 @@ const Todo = () => {
                 {data.map(item=>(
                     <li>{item.task} ===== {item.priority} ===== {item.status}</li>
                 ))}
-                {data.map((item)=>(
-                    <div key={item.id} className="grid grid-cols-4 gap-10">
-                        <li>{item.task}</li>
-                        <li>{item.priority}</li>
-                        <li>{item.status}</li>
-                        <button onClick={()=>handleDelete(item._id)} className="p-1 bg-gray-400 text-white rounded-md ">Delete</button>
-                    </div>
-                ))}
             </ul> */}
             <ul className="flex flex-col gap-5 mt-5">
             {data.map((item) => (
