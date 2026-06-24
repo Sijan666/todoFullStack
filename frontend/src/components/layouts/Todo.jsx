@@ -75,9 +75,7 @@ const Todo = () => {
             </h1>
             {info.message && (
                 info.success ? 
-                <p>
-                    {/* {info.message} */}
-                </p> 
+                <p></p> 
                 :
                 <p className="text-red-700 bg-red-50 border border-red-200 p-3.5 rounded-xl mb-6 text-center font-medium shadow-sm">
                     {info.message}
