@@ -80,18 +80,18 @@ const Todo = () => {
                     Add Task
                 </button>
                 {/* task list */}
-                <ul>
-                    {/* sir er dekhano way */}
-                    {/* {data.map(item=>(
-                        <li>{item.task} ===== {item.priority} ===== {item.status}</li>
-                    ))} */}
-                    {data.map((item)=>(
-                        <div key={item.id} className="">
-                            <li>{item.task} ===== {item.priority} ===== {item.status}</li>
-                        </div>
-                    ))}
-                </ul>
             </div>
+            <ul>
+                {/* sir er dekhano way */}
+                {/* {data.map(item=>(
+                    <li>{item.task} ===== {item.priority} ===== {item.status}</li>
+                ))} */}
+                {data.map((item)=>(
+                    <div key={item.id} className="">
+                        <li>{item.task} ===== {item.priority} ===== {item.status}</li>
+                    </div>
+                ))}
+            </ul>
         </div>
         </>
     )
