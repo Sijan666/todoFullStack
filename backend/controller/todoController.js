@@ -1,8 +1,10 @@
 const Todo = require('../model/todoModel')
 
+// to create tasks
 const createTodo =async (req,res) => {
     const {task,status,priority} = req.body
 
+    // conditions to match
     if (!task || !priority) {
         return res.send({
             success : false,
@@ -22,6 +24,7 @@ const createTodo =async (req,res) => {
     })
 }
 
+// showing all tasks
 const allTodos = async (req,res) => {
     let data = await Todo.find({})
     res.send({
@@ -31,6 +34,7 @@ const allTodos = async (req,res) => {
     })
 }
 
+// to delete tasks
 const deleteData = async (req,res) => {
     const {id} = req.params
     let deleteTodo = await Todo.findByIdAndDelete(id)
@@ -40,6 +44,7 @@ const deleteData = async (req,res) => {
     })
 }
 
+// to update tasks
 const updateData = async (req,res) => {
     const {id} = req.params
     let updateTodo = await Todo.findByIdAndUpdate({_id:id},req.body)
