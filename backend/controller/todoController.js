@@ -5,7 +5,7 @@ const createTodo = async (req,res) => {
     const {task,status,priority} = req.body
 
     // conditions to match
-    if (!task || !priority) {
+    if (!task || !priority || !status) {
         return res.send({
             success : false,
             message : 'Please fill all the field'
@@ -14,7 +14,8 @@ const createTodo = async (req,res) => {
 
     const todo = new Todo({
         task : task,
-        priority : priority
+        priority : priority,
+        status : status
     })
 
     await todo.save()
