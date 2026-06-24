@@ -67,8 +67,7 @@ const Todo = () => {
                     className="flex-1 px-5 py-4 bg-slate-50 border border-slate-200 text-slate-700 rounded-xl placeholder-slate-400 outline-none focus:bg-white focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-all duration-200"/>
                 {/* Select */}
                 <div className="relative w-full sm:w-auto">
-                    <select 
-                        onChange={handleSelect} 
+                    <select onChange={handleSelect} 
                         className="w-full appearance-none px-5 py-4 bg-slate-50 border border-slate-200 text-slate-700 rounded-xl outline-none cursor-pointer font-medium focus:bg-white focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-all duration-200 pr-12">
                         <option value="" disabled selected>Select Priority</option>
                         <option value="low">Low Priority</option>
