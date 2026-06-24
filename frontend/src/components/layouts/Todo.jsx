@@ -64,7 +64,8 @@ const Todo = () => {
     let handleUpdate = async () => {
         let data = await axios.post(`http://localhost:5000/update/${id}`, {
             'task': task,
-            'priority': priority
+            'priority': priority,
+            'status' : status
         })
         console.log(data);
         let todosData = await axios.get('http://localhost:5000/allTodos')
