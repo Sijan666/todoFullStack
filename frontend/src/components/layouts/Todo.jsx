@@ -15,6 +15,8 @@ const Todo = () => {
         });
 
         setinfo(data.data);
+        let todosData = await axios.get('http://localhost:5000/allTodos')
+        setData(todosData.data.data);
     }
 
     let handleTaskChange = (e) => {
