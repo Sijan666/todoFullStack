@@ -11,12 +11,12 @@ const Todo = () => {
     let [id, setId] = useState('')
 
     let handleClick = async () => {
-        let data = await axios.post('http://localhost:5000/create/todo', {
+        let respone = await axios.post('http://localhost:5000/create/todo', {
             'task': task,
             'priority': priority
         });
 
-        setinfo(data.data);
+        setinfo(respone.data);
         let todosData = await axios.get('http://localhost:5000/allTodos')
         setData(todosData.data.data);
         setTask("")
